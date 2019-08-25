@@ -5,7 +5,7 @@
   <title>Bootstrap Landing Page Website Tutorial</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
   <!-- <link href="style.css" rel="stylesheet" /> -->
@@ -13,7 +13,7 @@
 
 <body>
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
@@ -35,7 +35,7 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
   <nav class="navbar navbar-expand-md fixed-top navbar-default">
     <div class="container-fluid">
@@ -43,16 +43,16 @@
       <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
         data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false"
         aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="fa-angle-down"></span>
       </button>
       <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav ml-auto navbar-test">
           <li><a class="active" href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Testimonial</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#">Login</a></li>
+          <li><a href="#" (click)="open()">Login</a></li>
         </ul>
       </div>
     </div>

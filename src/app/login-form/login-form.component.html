@@ -1,0 +1,43 @@
+<div class="modal-header" style="background: rgb(64, 107, 145);">
+  <h4 class="modal-title" id="modal-basic-title">Login</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<!-- <form>
+<div class="modal-body">
+    <div class="form-group">
+      <label for="dateOfBirth">Date of birth</label>
+      <div class="input-group">
+        <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+        </div>
+      </div>
+    </div>
+  
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Save click')">Save</button>
+</div>
+</form> -->
+<form novalidate #loginForm="ngForm" (ngSubmit)="submitForm()">
+  <div class="modal-body">
+    <div class="container">
+      <div class="form-group">
+        <label for="uname">Username:</label>
+        <input type="text" class="form-control"[(ngModel)]="user.username" id="uname" placeholder="Enter username" name="uname" required>
+        
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" [(ngModel)]="user.password" id="pwd" placeholder="Enter password" name="pswd" required>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer" style="background: rgb(64, 107, 145);">
+    <button class="btn btn-success" [disabled]="loginForm.form.invalid">
+      Submit
+    </button>
+  </div>
+</form>

@@ -5,18 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { FormsModule } from "@angular/forms";
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    LoginFormComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [LoginService],
+  bootstrap: [AppComponent],
+  entryComponents:[LoginFormComponent]
 })
 export class AppModule { }

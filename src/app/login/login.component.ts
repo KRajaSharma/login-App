@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   isNavbarCollapsed=true;
-  constructor() { }
+  constructor(private modalService : NgbModal) { }
 
   ngOnInit() {
   }
 
+
+  open(){
+    const modalRef = this.modalService.open(LoginFormComponent,{ centered: true });
+    
+  }
 }
