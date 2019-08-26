@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginService } from '../services/login.service';
+import { User } from '../model/user';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login-form',
@@ -8,14 +11,31 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginFormComponent implements OnInit {
 
-  user = {username: '', password: ''}
-  constructor(private activeModal : NgbActiveModal) { }
+  user = {userName: '', password: ''};
+  user1 : User;
+  errorMessage : string;
+  constructor(private activeModal : NgbActiveModal, private loginService :LoginService) { }
 
   ngOnInit() {
   }
 
   submitForm(){
-    console.log(this.user);
-    this.activeModal.close();
+   this.loginService.postLogin(this.user).subscribe((res)=>{this.demo(res);});
+    //this.userReturned.subscribe((res)=>{this.user1= res});
+    //console.log(this.user1);
+   // this.activeModal.close();
+
+  }
+
+  demo(res : User){
+
+    if(res == null){
+      this.errorMessage = "Invalid Login"; 
+      console.log("Invalid Login");
+    }
+    this.user1 = res;
+    
+    console.log(this.user1);
+    
   }
 }

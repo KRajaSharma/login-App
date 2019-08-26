@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule } from "@angular/forms";
 import { LoginService } from './services/login.service';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginService } from './services/login.service';
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],
